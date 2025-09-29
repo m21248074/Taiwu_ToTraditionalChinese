@@ -12,8 +12,7 @@
 
 ## Installation 安裝
 
-待補
-
+[Steam 工作坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3577070985) 訂閱後即可使用!
 
 目前不知道與其他模組是否有衝突，模組有任何問題，歡迎提出[Issue](https://github.com/m21248074/Taiwu_ToTraditionalChinese/issues)!
 
