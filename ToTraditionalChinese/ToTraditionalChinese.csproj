@@ -12,6 +12,8 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,20 +41,9 @@
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\The Scroll Of Taiwu\The Scroll of Taiwu_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="JiebaNet.Analyser, Version=0.42.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\jieba.NET.0.42.2\lib\net45\JiebaNet.Analyser.dll</HintPath>
-    </Reference>
-    <Reference Include="JiebaNet.Segmenter, Version=0.42.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\jieba.NET.0.42.2\lib\net45\JiebaNet.Segmenter.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="OpenCCNET, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OpenCCNET.1.0.3\lib\netstandard2.0\OpenCCNET.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -77,38 +68,59 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OpenCCDllLoader.cs" />
+    <Compile Include="OpenCCHelper.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="ToTraditionalChinese.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="JiebaResource\char_state_tab.json" />
-    <None Include="JiebaResource\pos_prob_emit.json" />
-    <None Include="JiebaResource\pos_prob_start.json" />
-    <None Include="JiebaResource\pos_prob_trans.json" />
-    <None Include="JiebaResource\prob_emit.json" />
-    <None Include="JiebaResource\prob_trans.json" />
-    <None Include="packages.config" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Dictionary\HKVariants.txt" />
-    <Content Include="Dictionary\HKVariantsRevPhrases.txt" />
-    <Content Include="Dictionary\JPShinjitaiCharacters.txt" />
-    <Content Include="Dictionary\JPShinjitaiPhrases.txt" />
-    <Content Include="Dictionary\JPVariants.txt" />
-    <Content Include="Dictionary\STCharacters.txt" />
-    <Content Include="Dictionary\STPhrases.txt" />
-    <Content Include="Dictionary\TSCharacters.txt" />
-    <Content Include="Dictionary\TSPhrases.txt" />
-    <Content Include="Dictionary\TWPhrasesIT.txt" />
-    <Content Include="Dictionary\TWPhrasesName.txt" />
-    <Content Include="Dictionary\TWPhrasesOther.txt" />
-    <Content Include="Dictionary\TWVariants.txt" />
-    <Content Include="Dictionary\TWVariantsRevPhrases.txt" />
-    <Content Include="JiebaResource\cn_synonym.txt" />
-    <Content Include="JiebaResource\dict.txt" />
-    <Content Include="JiebaResource\idf.txt" />
-    <Content Include="JiebaResource\stopwords.txt" />
+    <EmbeddedResource Include="share\opencc\hk2s.json" />
+    <EmbeddedResource Include="share\opencc\hk2t.json" />
+    <EmbeddedResource Include="share\opencc\HKVariants.ocd2" />
+    <EmbeddedResource Include="share\opencc\HKVariantsRev.ocd2" />
+    <EmbeddedResource Include="share\opencc\HKVariantsRevPhrases.ocd2" />
+    <EmbeddedResource Include="share\opencc\jp2t.json" />
+    <EmbeddedResource Include="share\opencc\JPShinjitaiCharacters.ocd2" />
+    <EmbeddedResource Include="share\opencc\JPShinjitaiPhrases.ocd2" />
+    <EmbeddedResource Include="share\opencc\JPVariants.ocd2" />
+    <EmbeddedResource Include="share\opencc\JPVariantsRev.ocd2" />
+    <EmbeddedResource Include="share\opencc\s2hk.json" />
+    <EmbeddedResource Include="share\opencc\s2t.json" />
+    <EmbeddedResource Include="share\opencc\s2tw.json" />
+    <EmbeddedResource Include="share\opencc\s2twp.json" />
+    <EmbeddedResource Include="share\opencc\STCharacters.ocd2" />
+    <EmbeddedResource Include="share\opencc\STPhrases.ocd2" />
+    <EmbeddedResource Include="share\opencc\t2hk.json" />
+    <EmbeddedResource Include="share\opencc\t2jp.json" />
+    <EmbeddedResource Include="share\opencc\t2s.json" />
+    <EmbeddedResource Include="share\opencc\t2tw.json" />
+    <EmbeddedResource Include="share\opencc\TSCharacters.ocd2" />
+    <EmbeddedResource Include="share\opencc\TSPhrases.ocd2" />
+    <EmbeddedResource Include="share\opencc\tw2s.json" />
+    <EmbeddedResource Include="share\opencc\tw2sp.json" />
+    <EmbeddedResource Include="share\opencc\tw2t.json" />
+    <EmbeddedResource Include="share\opencc\TWPhrases.ocd2" />
+    <EmbeddedResource Include="share\opencc\TWPhrasesRev.ocd2" />
+    <EmbeddedResource Include="share\opencc\TWVariants.ocd2" />
+    <EmbeddedResource Include="share\opencc\TWVariantsRev.ocd2" />
+    <EmbeddedResource Include="share\opencc\TWVariantsRevPhrases.ocd2" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="opencc.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>REM ILRepack /out:Merged_Final.dll .\ToTraditionalChinese.dll ./OpenccJiebaLib.dll ./System.Memory.dll ./System.Buffers.dll ./System.Numerics.Vectors.dll ./System.Runtime.CompilerServices.Unsafe.dll</PostBuildEvent>
+  </PropertyGroup>
 </Project>
