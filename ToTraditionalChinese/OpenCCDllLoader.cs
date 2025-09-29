@@ -28,28 +28,18 @@ namespace ToTraditionalChinese
         {
             openccModuleHandle = LoadLibrary(openccDllFilePath);
             if (openccModuleHandle == IntPtr.Zero)
-            {
-                Console.WriteLine("錯誤：無法加載 opencc.dll。請確認它在執行路徑中。");
                 return false;
-            }
 
             IntPtr openPtr = GetProcAddress(openccModuleHandle, "opencc_open");
             if (openPtr == IntPtr.Zero)
-            {
-                Console.WriteLine("錯誤：找不到 opencc_open 函數。");
                 return false;
-            }
             OpenCC_Open_Func = (opencc_open_delegate)Marshal.GetDelegateForFunctionPointer(openPtr, typeof(opencc_open_delegate));
 
             IntPtr convertPtr = GetProcAddress(openccModuleHandle, "opencc_convert_utf8");
             if (convertPtr == IntPtr.Zero)
-            {
-                Console.WriteLine("錯誤：找不到 opencc_convert_utf8 函數。");
                 return false;
-            }
             OpenCC_Convert_UTF8_Func = (opencc_convert_utf8_delegate)Marshal.GetDelegateForFunctionPointer(convertPtr, typeof(opencc_convert_utf8_delegate));
 
-            Console.WriteLine("已加載 opencc.dll");
             return true;
         }
 
@@ -61,7 +51,6 @@ namespace ToTraditionalChinese
                 openccModuleHandle = IntPtr.Zero;
                 OpenCC_Open_Func = null;
                 OpenCC_Convert_UTF8_Func = null;
-                Console.WriteLine("opencc.dll 已釋放。");
             }
         }
 

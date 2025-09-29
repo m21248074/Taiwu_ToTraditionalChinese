@@ -59,6 +59,10 @@ namespace ToTraditionalChinese
             extractionDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "opencc");
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
             string[] resourceNames = assembly.GetManifestResourceNames();
+
+            if (!Directory.Exists(extractionDir))
+                Directory.CreateDirectory(extractionDir);
+
             foreach (string resourceName in resourceNames)
             {
                 if (resourceName.Contains("opencc"))
@@ -79,7 +83,6 @@ namespace ToTraditionalChinese
                     }
                     if (resourceName.Contains("opencc.dll"))
                     {
-                        Console.WriteLine(resourceName + " " + targetPath);
                         loader = new OpenCCDllLoader();
                         loader.LoadOpenCC(targetPath);
                     }
