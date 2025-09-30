@@ -119,6 +119,13 @@
   <ItemGroup>
     <EmbeddedResource Include="opencc.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="share\opencc\s2twp_taiwu.json" />
+    <EmbeddedResource Include="share\opencc\Taiwu.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="share\opencc\Taiwu.ocd2" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>REM ILRepack /out:Merged_Final.dll .\ToTraditionalChinese.dll ./OpenccJiebaLib.dll ./System.Memory.dll ./System.Buffers.dll ./System.Numerics.Vectors.dll ./System.Runtime.CompilerServices.Unsafe.dll</PostBuildEvent>

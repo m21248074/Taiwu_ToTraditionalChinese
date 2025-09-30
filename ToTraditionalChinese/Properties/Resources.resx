@@ -163,6 +163,9 @@
   <data name="s2twp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\share\opencc\s2twp.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="s2twp_taiwu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\share\opencc\s2twp_taiwu.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="STCharacters" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\share\opencc\STCharacters.ocd2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -180,6 +183,12 @@
   </data>
   <data name="t2tw" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\share\opencc\t2tw.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Taiwu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\share\opencc\Taiwu.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Taiwu1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\share\opencc\Taiwu.ocd2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="TSCharacters" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\share\opencc\TSCharacters.ocd2;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace ToTraditionalChinese
 {
-    [PluginConfig("ToTraditionalChinese", "CaveyCoding", "1.0.0")]
+    [PluginConfig("ToTraditionalChinese", "CaveyCoding", "1.1.0.0")]
     public class ToTraditionalChinese : TaiwuRemakePlugin
     {
         private static Harmony harmony;
@@ -16,7 +16,8 @@ namespace ToTraditionalChinese
             s2t = 1,
             s2tw = 2,
             s2twp = 3,
-            s2hk = 4
+            s2hk = 4,
+            s2twp_taiwu = 5
         }
 
         public override void Dispose()
@@ -56,6 +57,7 @@ namespace ToTraditionalChinese
                 case 2:
                 case 3:
                 case 4:
+                case 5:
                     value = OpenCCHelper.OpenCC(value);
                     break;
                 default:

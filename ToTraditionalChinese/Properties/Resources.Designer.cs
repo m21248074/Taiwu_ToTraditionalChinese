@@ -213,6 +213,16 @@ namespace ToTraditionalChinese.Properties {
         /// <summary>
         ///   查詢類型 System.Byte[] 的當地語系化資源。
         /// </summary>
+        internal static byte[] s2twp_taiwu {
+            get {
+                object obj = ResourceManager.GetObject("s2twp_taiwu", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Byte[] 的當地語系化資源。
+        /// </summary>
         internal static byte[] STCharacters {
             get {
                 object obj = ResourceManager.GetObject("STCharacters", resourceCulture);
@@ -266,6 +276,25 @@ namespace ToTraditionalChinese.Properties {
         internal static byte[] t2tw {
             get {
                 object obj = ResourceManager.GetObject("t2tw", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 叁	參 的當地語系化字串。
+        /// </summary>
+        internal static string Taiwu {
+            get {
+                return ResourceManager.GetString("Taiwu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Byte[] 的當地語系化資源。
+        /// </summary>
+        internal static byte[] Taiwu1 {
+            get {
+                object obj = ResourceManager.GetObject("Taiwu1", resourceCulture);
                 return ((byte[])(obj));
             }
         }
